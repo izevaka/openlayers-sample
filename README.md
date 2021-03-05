@@ -1,4 +1,6 @@
 # openlayers-nearmap
+Modified example of the standard Nearmap OpenLayer sample with an added plus code overlay.
+
 Use OpenLayers library with Nearmap APIs.
 
 ### Quick Start
