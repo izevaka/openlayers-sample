@@ -106,6 +106,20 @@ function createLayer() {
   });
 }
 
+
+/**
+ * Create a plus.codes layer
+ */
+function createPlusCodeLayer() {
+  return new ol.layer.Tile({
+    source: new ol.source.XYZ({
+      projection: PROJECTIONS.Vert,
+      tileSize: TILE_SIZES.Vertical,
+      url: 'https://grid.plus.codes/grid/tms/{z}/{x}/{-y}.png'
+    })
+  });
+}
+
 /**
  * Calculates view bounds [minX, minY, maxX, maxY] for Nearmap coverage API.
  * Above coordinates are internally called [west, south, east, north].
@@ -304,7 +318,7 @@ function initMap() {
   olMap = new ol.Map({
     target: 'map',
     controls: [new ol.control.Zoom()],
-    layers: [createLayer()],
+    layers: [createLayer(), createPlusCodeLayer()],
     view: createView()
   });
 
